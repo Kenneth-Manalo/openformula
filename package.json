@@ -1,0 +1,25 @@
+{
+  "name": "open-formula",
+  "version": "1.0.0",
+  "description": "API service for OpenFormula",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "open-formula"
+  ],
+  "author": "Kenneth Manalo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "hot-formula-parser": "^3.0.1",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-parser": "^8.0.3",
+    "swagger-routes-express": "^3.1.1",
+    "swagger-ui-express": "^4.1.2",
+    "yamljs": "^0.3.0"
+  }
+}

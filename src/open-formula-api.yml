@@ -1,0 +1,108 @@
+openapi: 3.0.2
+info:
+  description: API for OpenFormula
+  version: 1.0.0
+  title: OpenFormula API
+servers:
+  - url: /openformula
+paths:
+  /formulalist:
+    get:
+      tags:
+        - root
+      summary: Get formula list
+      description: Returns a list of all supported formulas
+      operationId: formulalist
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FormulaList"
+  /setvar:
+    post:
+      tags:
+        - root
+      summary: Set variable
+      description: Set predefined variable name which can be visible while parsing formula expression
+      operationId: setvar
+      parameters:
+        - name: variables
+          description: variable name
+          schema:
+            type: array
+            items: {}
+          in: query
+          required: true
+        - name: formula
+          description: formula to be executed
+          schema:
+            type: string
+          in: query
+          required: true
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SetVar"
+  /setfunc:
+    post:
+      tags:
+        - root
+      summary: Set custom function
+      description: Set custom function which can be visible while parsing formula expression or call supported formulas
+      operationId: setfunc
+      parameters:
+        - name: name
+          description: custom variable name
+          schema:
+            type: string
+          in: query
+          required: false
+        - name: formula
+          description: custom formula function
+          schema:
+            type: string
+          in: query
+          required: false
+        - name: function
+          description: call custom function or supported formula
+          schema:
+            type: string
+          in: query
+          required: true
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SetFunc"
+components:
+  schemas:
+    FormulaList:
+      type: object
+      properties:
+        formulas:
+          type: array
+          items: {}
+    SetVar:
+      type: object
+      properties:
+        variables:
+          type: array
+          items: {}
+        formula:
+          type: string
+    SetFunc:
+      type: object
+      properties:
+        name:
+          type: string
+        function:
+          type: string
+        formula:
+          type: string
