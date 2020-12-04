@@ -22,7 +22,7 @@ This instructions aims you to get a local copy of the project that you can deplo
 Clone:
 
 ```
-git@git.cwp.pnp-hcl.com:Innovation-General/openformula.git
+https://github.com/Kenneth-Manalo/openformula.git
 ```
 
 Install dependencies:
@@ -32,7 +32,6 @@ $ npm install
 
 Start the server:
 ```
-$ cd src/
-$ nodemon index.js
+$ npm start
 
 Access http://localhost:3005/api-docs/
