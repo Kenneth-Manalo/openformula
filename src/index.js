@@ -1,7 +1,8 @@
 const openFormula = require('./app')
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || '8080'
 
 openFormula()
-    .then(app => app.listen(3005))
+    .then(app => app.listen(port))
     .then(() => {
         console.log('Server started')
     })
