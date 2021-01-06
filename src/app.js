@@ -17,7 +17,7 @@ const openFormula = async () => {
 
     const app = express()
 
-    app.use('/openapi', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     app.use(bodyParser());
 
     connect(app)
