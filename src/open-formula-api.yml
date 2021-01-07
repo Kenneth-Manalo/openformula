@@ -6,6 +6,16 @@ info:
 servers:
   - url: /openformula
 paths:
+  /dummyapi:
+    get:
+      tags:
+        - root
+      summary: Dummy endpoint
+      description: For demo purpose
+      operationId: dummyapi
+      responses:
+        "200":
+          description: success
   /formulalist:
     get:
       tags:
